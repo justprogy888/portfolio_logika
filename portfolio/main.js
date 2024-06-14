@@ -11,6 +11,21 @@ let tileAmountCol = Math.floor(document.body.clientHeight / 30)
 let cards = document.querySelectorAll(".card-bio-languages")
 console.log(tileAmountCol)
 console.log(tileAmountRow)
+setTimeout(()=>{
+    let glitch1 = document.querySelector(".glitch-1")
+    let glitch2 = document.querySelector(".glitch-2")
+    let text = document.querySelector(".title-text")
+    text.style.transform = "translateY(-15px)"
+    glitch1.style.height = "15px"
+    glitch2.style.height = "15px"
+    setTimeout(()=>{
+        glitch2.style.transform = "translateX(-5px)"
+        setTimeout(()=>{
+            glitch1.style.height = "30px"
+            glitch2.style.height = "0px"
+        },400)
+    },100)
+},8000)
 function onGridClick(index,elem){
     console.log("Hello world")
     anime({
@@ -245,6 +260,81 @@ grad_card[1].addEventListener("mousemove", (e)=>{
     rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
   `
     })
+function add_text2(){
+    console.log("Mouse on")
+    console.log("Before add text if " + completed)
+    let skills_ul = card_list[2].querySelector(".skls")
+            //if(completed == true){
+            console.log("In add text if " + completed)
+            anime({
+                targets:skills_ul.querySelectorAll(".li-skill"), 
+                keyframes:[{height:"50px",opacity:1.0,translateY:0,duration:800,easing:"easeOutQuad"}],
+                delay:anime.stagger(900,{start:1000}),
+            })
+            //timeline1.play()
+            for(let i = 0;i <= skills_ul.querySelectorAll(".li-skill").length - 1;i++){
+                skills_ul.children[i].style.transform = "translateY(0px)"
+            }
+            //}
+}
+function cancel2(){
+    let skills_ul = card_list[2].querySelector(".skls")
+    anime({
+        targets:grad_card[2],
+        rotateX:0,
+        rotateY:0,
+        duration:300,
+        easing:"easeOutQuad"
+    })
+    
+        anime({
+            targets: Array.from(skills_ul.querySelectorAll(".li-skill")).reverse(),
+            translateY:20,
+            height:"0px",
+            opacity:0.0,
+            easing:"easeOutQuad",
+            duration:800,
+            delay:anime.stagger(900,{start:2000}),
+        })
+        /*console.log(run_reverse)
+        let skills_ul = card_list[0].querySelector(".skls")
+        console.log("Before cancel if " + completed)
+        console.log("leave instant " + run_reverse)
+        timeline1.pause()
+        //grad_card[0].removeEventListener("mouseenter", add_text)
+        grad_card[0].removeEventListener("mouseleave", cancel)
+        console.log("Mouse out")
+        completed = false
+        console.log("In cancel if " + completed)
+        an = anime({
+            targets: Array.from(skills_ul.querySelectorAll(".li-skill")).reverse(),
+            translateY:20,
+            height:"0px",
+            opacity:0.0,
+            easing:"easeOutQuad",
+            duration:800,
+            delay:anime.stagger(900,{start:2000}),
+        }).finished.then(()=>{
+            console.log("completed")
+            completed = true
+            run_reverse = false
+            //grad_card[0].addEventListener("mouseenter", add_text)
+            grad_card[0].addEventListener("mouseleave", cancel)
+        })*/
+    }
+    
+grad_card[2].addEventListener("mouseenter", add_text2)
+grad_card[2].addEventListener("mouseleave", cancel2)
+grad_card[2].addEventListener("mousemove", (e)=>{
+    bounds = grad_card[2].getBoundingClientRect();
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const leftX = mouseX - bounds.x;
+    const topY = mouseY - bounds.y;
+    grad_card[2].style.transform = `
+    rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
+    `
+})
 let area_test = document.querySelector(".pull-div")
 let imgs_arr = document.querySelectorAll(".pull-img")
 let imgs_arr2 = document.querySelectorAll(".pull-img")
@@ -335,7 +425,7 @@ for(let i = 0;i <= path.length - 1;i++){
 }
 let display_svgs = true
 window.onscroll = function(){
-    console.log()
+    console.log(window.scrollY)
     if(window.scrollY >= 1900){
         if(display_svgs){
             let it_arr = document.querySelectorAll(".path")
@@ -532,6 +622,28 @@ choose_example[2].addEventListener("click",function(){
         imgs_arr = document.querySelectorAll(".pull-img")
     }
     
+})
+let header_items = document.querySelectorAll(".menu-item")
+header_items[0].addEventListener("click",function(){
+    window.scrollTo({
+        top: 2200,
+        left: 0,
+        behavior: "smooth"
+      });
+})
+header_items[1].addEventListener("click",function(){
+    window.scrollTo({
+        top: 1400,
+        left: 0,
+        behavior: "smooth"
+      });
+})
+header_items[2].addEventListener("click",function(){
+    window.scrollTo({
+        top: 1900,
+        left: 0,
+        behavior: "smooth"
+      });
 })
 /*card_list[1].addEventListener("mouseover",()=>{
     let skills_ul = card_list[1].querySelector(".skls")

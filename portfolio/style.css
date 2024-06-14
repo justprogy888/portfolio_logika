@@ -51,6 +51,16 @@
     initial-value: #D2122E;
     inherits: false;
   }
+  @property --myColor11 {
+    syntax: '<color>';
+    initial-value: #D2122E;
+    inherits: false;
+  }
+  @property --myColor12 {
+    syntax: '<color>';
+    initial-value: #D2122E;
+    inherits: false;
+  }
 body{
     background-color: rgb(26, 26, 26);
     color: white;
@@ -171,7 +181,7 @@ body{
     border-radius: 29px;
     transition: background-color 0.5s;
     background-color: #202020;
-
+    z-index: 2;
 }
 
 .skls{
@@ -290,9 +300,7 @@ body{
 .wrap-center:hover {
     filter: drop-shadow(0px 20px rgba(0,0,0,0.15));
 }
-.wrap-right:hover {
-    filter: drop-shadow(-20px 20px rgba(0,0,0,0.15));
-}
+
 .gradient-wrap:hover > .card{
     background-color:rgb(33, 33, 36);
 }
@@ -496,15 +504,15 @@ body{
     font-family: "Montserrat", sans-serif;
     font-size: 21px;
     margin: 0px;
-    transform: translateY(-15px);
+    transform: translateY(0px);
 }
 .glitch-1{
-    height: 15px;
+    height: 0px;
     overflow: hidden;
     opacity: 1.0;
 }
 .glitch-2{
-    height: 15px;
+    height: 30px;
     overflow: hidden;
     opacity: 1.0;
 }
@@ -710,6 +718,7 @@ i{
     width: 400%;
     z-index: -1;
     background:linear-gradient(to bottom right, var(--myColor9),var(--myColor10),var(--myColor9),var(--myColor10));
+    background-size: 200% 400%;
     transition: --myColor9 0.5s, --myColor10 0.5s ;
 }
 .langs{
@@ -727,7 +736,7 @@ i{
 .langs:hover > .gradient-langs{
     --myColor9:#E233FF;
     --myColor10:#FF6B00;
-    animation: moveGrad2;
+    animation: gradientMove;
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
@@ -740,4 +749,71 @@ i{
     font-size: 20px;
     font-weight: 400;
     margin: 0px;
+}
+.grad-background-emb{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background: linear-gradient(to bottom right,var(--myColor11),var(--myColor12));
+    background-size: 200% 400%;
+    transition: --myColor11 0.5s,--myColor11 0.5s;
+}
+.wrap-emb:hover > .grad-background-emb{
+    --myColor11:#007FFF;
+    --myColor12:#00308F;
+    animation: gradientMove;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes gradientMove {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.link-social{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.0;
+    transform: translateY(-40px);
+    transition: 0.3s all ease-in-out;
+    color: #D2122E;
+}
+.social-wrap:hover > .link-social{
+    transform: translateY(0px);
+    opacity: 1.0;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+@media (max-width:1200px){
+    .examples{
+        flex-direction: column;
+        height: 650px;
+        padding: 0px;
+        overflow: hidden;
+    }
+    .examples-left{
+        flex-direction: row;
+        width: 100%;
+        gap: 10%;
+        height: 200px;
+    }
+    .examples-right{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
 }
