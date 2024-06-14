@@ -1,0 +1,79 @@
+<svg width="260" height="51" viewBox="0 0 260 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="all-text">
+<g id="text-7seg">
+<g id="letter12">
+<path id="Rectangle 48" opacity="0.9" d="M174 26H175V32H174V26Z" fill="white"/>
+<path id="Rectangle 49" opacity="0.9" d="M175 26V25H180V26H175Z" fill="white"/>
+</g>
+<g id="letter11">
+<path id="Rectangle 42" opacity="0.9" d="M169 20H170V25H169V20Z" fill="white"/>
+<path id="Rectangle 43" opacity="0.9" d="M163 20H164V25H163V20Z" fill="white"/>
+<path id="Rectangle 44" opacity="0.9" d="M163 26H164V31H163V26Z" fill="white"/>
+<path id="Rectangle 45" opacity="0.9" d="M164 20V19H169V20H164Z" fill="white"/>
+<path id="Rectangle 46" opacity="0.9" d="M164 26V25H169V26H164Z" fill="white"/>
+<path id="Rectangle 47" opacity="0.9" d="M164 32V31H169V32H164Z" fill="white"/>
+</g>
+<g id="letter3">
+<path id="Rectangle 12" opacity="0.9" d="M89 20H90V25H89V20Z" fill="white"/>
+<path id="Rectangle 9" opacity="0.9" d="M83 20H84V25H83V20Z" fill="white"/>
+<path id="Rectangle 10" opacity="0.9" d="M83 26H84V31H83V26Z" fill="white"/>
+<path id="Rectangle 11" opacity="0.9" d="M84 20V19H89V20H84Z" fill="white"/>
+<path id="Rectangle 13" opacity="0.9" d="M84 26V25H89V26H84Z" fill="white"/>
+<path id="Rectangle 14" opacity="0.9" d="M84 32V31H89V32H84Z" fill="white"/>
+</g>
+<g id="letter8">
+<path id="Rectangle 31" opacity="0.9" d="M136 19H137V25H136V19Z" fill="white"/>
+<path id="Rectangle 32" opacity="0.9" d="M136 26H137V32H136V26Z" fill="white"/>
+</g>
+<g id="letter7">
+<path id="Rectangle 25" opacity="0.9" d="M125 26H126V31H125V26Z" fill="white"/>
+<path id="Rectangle 26" opacity="0.9" d="M125 20H126V25H125V20Z" fill="white"/>
+<path id="Rectangle 30" opacity="0.9" d="M131 26H132V31H131V26Z" fill="white"/>
+<path id="Rectangle 27" opacity="0.9" d="M126 20V19H131V20H126Z" fill="white"/>
+<path id="Rectangle 28" opacity="0.9" d="M126 26V25H131V26H126Z" fill="white"/>
+<path id="Rectangle 29" opacity="0.9" d="M126 32V31H131V32H126Z" fill="white"/>
+</g>
+<g id="letter6">
+<path id="Rectangle 22" opacity="0.9" d="M114 26H115V32H114V26Z" fill="white"/>
+<path id="Rectangle 23" opacity="0.9" d="M120 26H121V32H120V26Z" fill="white"/>
+<path id="Rectangle 24" opacity="0.9" d="M115 26V25H120V26H115Z" fill="white"/>
+</g>
+<g id="letter9">
+<path id="Rectangle 33" opacity="0.9" d="M141 26H142V32H141V26Z" fill="white"/>
+<path id="Rectangle 34" opacity="0.9" d="M147 26H148V32H147V26Z" fill="white"/>
+<path id="Rectangle 35" opacity="0.9" d="M142 26V25H147V26H142Z" fill="white"/>
+</g>
+<g id="letter5">
+<path id="Rectangle 16" opacity="0.9" d="M109 20H110V25H109V20Z" fill="white"/>
+<path id="Rectangle 17" opacity="0.9" d="M103 20H104V25H103V20Z" fill="white"/>
+<path id="Rectangle 18" opacity="0.9" d="M103 26H104V31H103V26Z" fill="white"/>
+<path id="Rectangle 19" opacity="0.9" d="M104 20V19H109V20H104Z" fill="white"/>
+<path id="Rectangle 20" opacity="0.9" d="M104 26V25H109V26H104Z" fill="white"/>
+<path id="Rectangle 21" opacity="0.9" d="M104 32V31H109V32H104Z" fill="white"/>
+</g>
+<g id="letter10">
+<path id="Rectangle 36" opacity="0.9" d="M158 20H159V25H158V20Z" fill="white"/>
+<path id="Rectangle 37" opacity="0.9" d="M152 20H153V25H152V20Z" fill="white"/>
+<path id="Rectangle 38" opacity="0.9" d="M152 26H153V31H152V26Z" fill="white"/>
+<path id="Rectangle 39" opacity="0.9" d="M153 20V19H158V20H153Z" fill="white"/>
+<path id="Rectangle 40" opacity="0.9" d="M153 26V25H158V26H153Z" fill="white"/>
+<path id="Rectangle 41" opacity="0.9" d="M153 32V31H158V32H153Z" fill="white"/>
+</g>
+<g id="letter4">
+<path id="Rectangle 15" opacity="0.9" d="M94 32V31H99V32H94Z" fill="white"/>
+</g>
+<g id="letter2">
+<path id="Rectangle 5" opacity="0.9" d="M72 20H73V25H72V20Z" fill="white"/>
+<path id="Rectangle 6" opacity="0.9" d="M72 26H73V32H72V26Z" fill="white"/>
+<path id="Rectangle 7" opacity="0.9" d="M73 26V25H78V26H73Z" fill="white"/>
+<path id="Rectangle 8" opacity="0.9" d="M78 26H79V32H78V26Z" fill="white"/>
+</g>
+<g id="letter1">
+<rect id="Rectangle 1" opacity="0.9" x="62" y="20" width="1" height="5" fill="white"/>
+<path id="Rectangle 2" opacity="0.9" d="M62 26H63V31H62V26Z" fill="white"/>
+<path id="Rectangle 3" opacity="0.9" d="M63 32V31H68V32H63Z" fill="white"/>
+<path id="Rectangle 4" opacity="0.9" d="M63 26V25H68V26H63Z" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
