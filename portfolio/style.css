@@ -893,11 +893,11 @@ a{
         height: 60px;
         width: 60px;
     }
-    #input-burger:checked ~ .burger-label > .header-items{
+    #input-burger:checked ~ .header-items{
         border-width: 2px;
         height: 140px;
     }
-    #input-burger:checked ~ .burger-label > .header-items .menu-item{
+    #input-burger:checked ~ .header-items .menu-item{
         opacity: 1.0;
     }
     .menu-item{
@@ -911,6 +911,12 @@ a{
     #input-burger{
         display: none;
     }
+    #input-burger:checked ~ .burger-label > .burger{
+        gap: 8px;
+    }
+    #input-burger:checked ~ .burger-label > .burger:hover{
+        gap: 2px;
+    }
     .burger{
         height: 60px;
         width: 60px;
@@ -918,7 +924,11 @@ a{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
+        transition: all 0.1s;
+    }
+    .burger:hover{
+        gap: 6px;
     }
     .burger-part{
         height: 3px;
@@ -939,5 +949,23 @@ a{
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .pull-img{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        transform: translateY(500px);
+        user-select: none;
+        z-index: 1;
+        height: auto;
+    }
+    .img-inner{
+        width: 100%;
+        height: auto;
+        user-select: none;
+        pointer-events: none;
     }
 }

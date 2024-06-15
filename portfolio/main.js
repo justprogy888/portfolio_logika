@@ -639,7 +639,10 @@ choose_example[2].addEventListener("click",function(){
     
 })
 let header_items = document.querySelectorAll(".menu-item")
+
+
 header_items[0].addEventListener("click",function(){
+    console.log("Hello world")
     window.scrollTo({
         top: 2200,
         left: 0,
