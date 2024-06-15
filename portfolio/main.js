@@ -6,11 +6,13 @@ let c = false
 var completed2 = false
 var completed3 = false
 let gr = document.querySelector(".grid-background")
-let tileAmountRow = Math.floor(document.body.clientWidth / 30)
-let tileAmountCol = Math.floor(document.body.clientHeight / 30)
+let tileAmountRow = Math.floor(gr.getBoundingClientRect().height / 20)
+let tileAmountCol = Math.floor(gr.getBoundingClientRect().width / 20)
 let cards = document.querySelectorAll(".card-bio-languages")
 console.log(tileAmountCol)
 console.log(tileAmountRow)
+console.log(document.body.clientWidth)
+console.log(document.body.clientHeight)
 setTimeout(()=>{
     let glitch1 = document.querySelector(".glitch-1")
     let glitch2 = document.querySelector(".glitch-2")
@@ -24,7 +26,7 @@ setTimeout(()=>{
             glitch1.style.height = "30px"
             glitch2.style.height = "0px"
         },400)
-    },100)
+    },50)
 },8000)
 function onGridClick(index,elem){
     console.log("Hello world")
@@ -128,15 +130,20 @@ function cancel(){
 grad_card[0].addEventListener("mouseenter", add_text)
 grad_card[0].addEventListener("mouseleave", cancel)
 grad_card[0].addEventListener("mousemove", (event)=>{
-    setTimeout(()=>{
-        let mouseX = event.clientX
-        let mouseY = event.clientY
-        let halfWidth = card_list[0].getBoundingClientRect().width / 2
-        let halfHeight = card_list[0].getBoundingClientRect().height
-        let xdeg = (mouseX - halfWidth)/halfWidth;
-        let ydeg = (mouseY - halfHeight)/halfHeight;
-        grad_card[0].style.transform = `rotateX(${ydeg * 30}deg) rotateY(${xdeg * 20}deg)`;
-    },100)
+    if(window.innerWidth < 1201){
+        
+    }else{
+        setTimeout(()=>{
+            let mouseX = event.clientX
+            let mouseY = event.clientY
+            let halfWidth = card_list[0].getBoundingClientRect().width / 2
+            let halfHeight = card_list[0].getBoundingClientRect().height
+            let xdeg = (mouseX - halfWidth)/halfWidth;
+            let ydeg = (mouseY - halfHeight)/halfHeight;
+            grad_card[0].style.transform = `rotateX(${ydeg * 30}deg) rotateY(${xdeg * 20}deg)`;
+        },100)
+    }   
+    
     
 })
 let timeline2 = anime.timeline({
@@ -251,14 +258,17 @@ grad_card[1].addEventListener("mouseenter", add_text1)
 grad_card[1].addEventListener("mouseleave", cancel1)
 let bounds;
 grad_card[1].addEventListener("mousemove", (e)=>{
-    bounds = grad_card[1].getBoundingClientRect();
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    const leftX = mouseX - bounds.x;
-    const topY = mouseY - bounds.y;
-    grad_card[1].style.transform = `
-    rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
-  `
+    if(window.innerWidth < 1201){
+    }else{
+        bounds = grad_card[1].getBoundingClientRect();
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const leftX = mouseX - bounds.x;
+        const topY = mouseY - bounds.y;
+        grad_card[1].style.transform = `
+        rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
+    `
+    }
     })
 function add_text2(){
     console.log("Mouse on")
@@ -326,14 +336,19 @@ function cancel2(){
 grad_card[2].addEventListener("mouseenter", add_text2)
 grad_card[2].addEventListener("mouseleave", cancel2)
 grad_card[2].addEventListener("mousemove", (e)=>{
-    bounds = grad_card[2].getBoundingClientRect();
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    const leftX = mouseX - bounds.x;
-    const topY = mouseY - bounds.y;
-    grad_card[2].style.transform = `
-    rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
-    `
+    console.log(window.innerWidth)
+    if(window.innerWidth < 1201){
+
+    }else{
+        bounds = grad_card[2].getBoundingClientRect();
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const leftX = mouseX - bounds.x;
+        const topY = mouseY - bounds.y;
+        grad_card[2].style.transform = `
+        rotateX(${(topY - bounds.height / 2) / 30}deg) rotateY(${(leftX - bounds.width / 2) / 30}deg)
+        `
+    }
 })
 let area_test = document.querySelector(".pull-div")
 let imgs_arr = document.querySelectorAll(".pull-img")
