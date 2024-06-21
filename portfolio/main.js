@@ -140,7 +140,7 @@ grad_card[0].addEventListener("mousemove", (event)=>{
             let halfHeight = card_list[0].getBoundingClientRect().height
             let xdeg = (mouseX - halfWidth)/halfWidth;
             let ydeg = (mouseY - halfHeight)/halfHeight;
-            grad_card[0].style.transform = `rotateX(${ydeg * 30}deg) rotateY(${xdeg * 20}deg)`;
+            grad_card[0].style.transform = `rotateX(${ydeg * 20}deg) rotateY(${xdeg * 10}deg)`;
         },100)
     }   
     
@@ -149,9 +149,11 @@ grad_card[0].addEventListener("mousemove", (event)=>{
 let timeline2 = anime.timeline({
     targets:card_list[1].querySelector(".skls").querySelectorAll(".li-skill")[0],
 }) 
+let lock = false
 let anim_arr = []
 function add_text1(){
-    let skills_ul = card_list[1].querySelector(".skls")
+    if(!lock){
+        let skills_ul = card_list[1].querySelector(".skls")
     let an1 = anime({
         targets:card_list[1].querySelectorAll(".snake")[0], 
         opacity:1.0,
@@ -236,6 +238,8 @@ function add_text1(){
             })
         })
     })
+    lock = true
+    }
 }
 function cancel1(){
     anime({
@@ -492,7 +496,7 @@ cards[0].addEventListener("click",()=>{
     card.querySelector(".text-click").style.height = "0px"
     anime({
         targets:card.querySelector(".bio-info"),
-        height:[{value:"30px",duration:700,easing:"easeOutQuad"},{value:"180px",duration:500,easing:"linear"}]
+        height:[{value:"30px",duration:700,easing:"easeOutQuad"},{value:"180px",duration:500,easing:"easeOutQuad"}]
     }).finished.then(()=>{
         anime({
             targets:card.querySelectorAll(".li-bio-info"),
@@ -559,6 +563,19 @@ cards[1].addEventListener("click",()=>{
 })
 let chosen = 0
 let choose_example = document.querySelectorAll(".example")
+for(let i = 0; i <= choose_example.length - 1; i++){
+    choose_example[i].addEventListener("mouseover",()=>{
+        if(i != chosen){
+            choose_example[i].querySelector(".bottom-bar").style.width = "70%"
+        }
+        
+    })
+    choose_example[i].addEventListener("mouseleave",()=>{
+        if(i != chosen){
+        choose_example[i].querySelector(".bottom-bar").style.width = "0%"
+        }
+    })
+}
 choose_example[0].addEventListener("click",function(){
     console.log("Hello world")
     if(chosen!=0){
@@ -631,7 +648,23 @@ choose_example[2].addEventListener("click",function(){
     if(chosen != 2){
         choose_example[2].querySelector(".bottom-bar").style.width = "100%"
         choose_example[chosen].querySelector(".bottom-bar").style.width = "0%"
-        document.querySelector(".pull-div").innerHTML = ``
+        document.querySelector(".pull-div").innerHTML = `
+        <div class="pull-img">
+            <img src="img_0embedded.png" alt="" class="img-inner">
+            <p class="text-photo-description">Meteostation. Displays temperature, pressure, time and date. Now disassembled, waiting for rework.</p>
+            <div class="bottom-grad"></div>
+        </div>
+        <div class="pull-img">
+            <img src="img_2embedded.jpg" alt="" class="img-inner">
+            <p class="text-photo-description">Front view</p>
+            <div class="bottom-grad"></div>
+        </div>
+        <div class="pull-img">
+            <img src="img_1embedded.jpg" alt="" class="img-inner">
+            <p class="text-photo-description">Back view with sensor BMP280</p>
+            <div class="bottom-grad"></div>
+        </div>
+        `
         chosen = 2
         count_img = 1
         imgs_arr = document.querySelectorAll(".pull-img")

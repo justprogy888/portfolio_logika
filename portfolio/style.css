@@ -65,10 +65,11 @@ body{
     background-color: rgb(26, 26, 26);
     color: white;
     overflow-x: hidden;
+    margin: 0px;
 }
 .header{
     width: 100vw;
-    height: 60px;
+    height: 80px;
     margin-left: -10px;
     display: flex;
     justify-content: center;
@@ -181,7 +182,7 @@ body{
     padding: 20px;
     border-radius: 29px;
     transition: background-color 0.5s;
-    background-color: #202020;
+    background-color: rgb(26, 26, 26);
     z-index: 2;
 }
 
@@ -207,7 +208,6 @@ body{
     opacity: 0.0;
     height: 0px;
     padding: 0px;
-    transform-style: preserve-3d;
 }
 .python-skill{
     height: fit-content;
@@ -216,7 +216,6 @@ body{
 .skills-li-python{
     opacity: 0.0;
     height: 0px;
-    transform: translateY(100px);
 }
 .title-card{
     display: block;
@@ -259,26 +258,10 @@ body{
     background: linear-gradient(320deg,var(--myColor3),var(--myColor4),var(--myColor3),var(--myColor4));
     transition: --myColor3 0.5s, --myColor4 0.5s, filter 1s,transform 0.1s;
     transform: translateX(0%);
+    border-radius: 30px;
+    height: 384px;
 }
-.wrap-left:hover > .gradient{
-    animation: moveGradient;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-.wrap-left:hover > .gradient > .grad{
-    --myColor3:#ED2939;
-    --myColor4:#8F00FF;
-}
-@keyframes moveGradient{
-    0%{
-        transform: translateX(0%);
-    }
-    100%{
-        transform: translateX(-81%);
-    }
-    
-    
-}
+
 .wrap-left:hover > .card > .title-card{
     color: whitesmoke;
     text-shadow: -2.5px -1px 2px #4FFFB0,
@@ -289,22 +272,35 @@ body{
     transform-style: preserve-3d;
 }
 .wrap-left{
-    background: none;
-    height: 385px;
+    position: relative;
+    height: 380px;
     width: 340px;
     perspective: 700px;
-    transform-style: preserve-3d;
+    background-size: 300% 300%;
 }
-.wrap-left:hover {
+.wrap-left:hover{
+    --myColor3:#ED2939;
+    --myColor4:#8F00FF;
+    animation: gradientM;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
     filter: drop-shadow(20px 20px rgba(0,0,0,0.15));
+}
+@keyframes gradientM {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 70% 70%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 .wrap-center:hover {
     filter: drop-shadow(0px 20px rgba(0,0,0,0.15));
 }
 
-.gradient-wrap:hover > .card{
-    background-color:rgb(33, 33, 36);
-}
 .python-grad:hover{
     --myColor3:yellow;
     --myColor4:#00308F;
@@ -386,10 +382,6 @@ body{
     perspective: 600px;
     margin: 40px;
 }
-.card-bio-languages{
-    transform-style: preserve-3d;
-    perspective: 500px;
-}
 .examples{
     display: flex;
     justify-content: space-between;
@@ -422,9 +414,6 @@ body{
     align-self: flex-start;
     background-color: crimson;
     transition: width 0.4s ease-out;
-}
-.example:hover .bottom-bar{
-    width: 100px;
 }
 .examples-left{
     width: 25%;
@@ -507,6 +496,7 @@ body{
     font-family: "Montserrat", sans-serif;
     font-size: 21px;
     margin: 0px;
+    margin-top: 3px;
     transform: translateY(0px);
 }
 .glitch-1{
@@ -585,8 +575,8 @@ body::-webkit-scrollbar-thumb{
 }
 .bio-inner{
     position: absolute;
-    height: 395px;
-    width: 355px;
+    height: 98%;
+    width: 100%;
     background-color: rgb(26, 26, 26);
     border-radius: 30px;
     display: flex;
@@ -621,6 +611,7 @@ body::-webkit-scrollbar-thumb{
 }
 .socials{
     margin-top: 150px;
+    width: 100%;
 }
 .flex-items-social{
     width: 100%;
@@ -634,7 +625,6 @@ body::-webkit-scrollbar-thumb{
 }
 .footer{
     position: absolute;
-    margin-left: -8px;
     margin-top: 200px;
     width: 100%;
     height: 100px;
@@ -648,7 +638,6 @@ body::-webkit-scrollbar-thumb{
     font-size: 18px;
     font-weight: 500;
     color: white;
-    margin-left: 8px;
 }
 .bio-info{
     display: flex;
@@ -696,6 +685,7 @@ i{
     line-height: 50px;
     padding: 0px;
     height: 0px;
+    margin: 0px;
     overflow: hidden;
 }
 .langs-li{
@@ -708,7 +698,7 @@ i{
 .card-langs-content{
     background-color: rgb(26, 26, 26);
     height: 100%;
-    width: 99.6%;
+    width: 100%;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -811,6 +801,13 @@ a{
 }
 .banner-mobile{
     display: none;
+}
+.backgr-text-examples{
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.2);
 }
 @media (max-width:1200px){
     .examples{
@@ -950,7 +947,9 @@ a{
         padding: 20px;
     }
     .flex-items-social{
-        gap:20px;
+        gap:10px;
+        width: 96%;
+        margin: 0 auto;
     }
     .social-wrap{
         display: flex;
