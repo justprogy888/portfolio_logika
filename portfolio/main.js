@@ -642,23 +642,23 @@ let header_items = document.querySelectorAll(".menu-item")
 
 
 header_items[0].addEventListener("click",function(){
-    console.log("Hello world")
+    console.log(document.querySelector(".flex-items-social").getBoundingClientRect().top)
     window.scrollTo({
-        top: 2200,
+        top: document.querySelector(".flex-items-social").getBoundingClientRect().top,
         left: 0,
         behavior: "smooth"
       });
 })
 header_items[1].addEventListener("click",function(){
     window.scrollTo({
-        top: 1400,
+        top: document.querySelector(".bio-card").getBoundingClientRect().top - 150,
         left: 0,
         behavior: "smooth"
       });
 })
 header_items[2].addEventListener("click",function(){
     window.scrollTo({
-        top: 1900,
+        top: window.innerWidth < 1200 ? document.querySelector(".wrap-examples").getBoundingClientRect().top - 250 : document.querySelector(".wrap-examples").getBoundingClientRect().top - 150,
         left: 0,
         behavior: "smooth"
       });
