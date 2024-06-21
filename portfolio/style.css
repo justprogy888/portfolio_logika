@@ -648,6 +648,7 @@ body::-webkit-scrollbar-thumb{
     font-size: 18px;
     font-weight: 500;
     color: white;
+    margin-left: 8px;
 }
 .bio-info{
     display: flex;
@@ -791,6 +792,8 @@ i{
     transform: translateY(-40px);
     transition: 0.3s all ease-in-out;
     color: white;
+    text-align: center;
+    text-wrap: nowrap;
 }
 .link-social:hover{
     color: crimson;
@@ -961,7 +964,7 @@ a{
         align-items: center;
         border: 2px solid crimson;
         margin-top: 100px;
-        width: 60%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         padding: 20px;
@@ -970,5 +973,6 @@ a{
         font-family: "Montserrat", sans-serif;
         font-size: 22px;
         font-weight: 400;
+        text-align: center;
     }
 }
